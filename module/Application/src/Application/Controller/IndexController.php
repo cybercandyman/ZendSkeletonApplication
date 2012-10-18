@@ -18,4 +18,16 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+	public function test1Action(){
+		ob_start();
+		$rm = $this->event->getRouteMatch();
+		\Zend\Debug\Debug::dump(($rm->getMatchedRouteName()));
+		\Zend\Debug\Debug::dump(($rm->getParams()));
+	}
+	public function test2Action(){
+		ob_start();
+		$rm = $this->event->getRouteMatch();
+		\Zend\Debug\Debug::dump(($rm->getMatchedRouteName()));
+		\Zend\Debug\Debug::dump(($rm->getParams()));	
+	}
 }

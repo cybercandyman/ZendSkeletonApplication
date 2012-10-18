@@ -45,8 +45,13 @@ return array(
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
+								'__NAMESPACE__' => 'Application\Controller'
                             ),
                         ),
+						'may_terminate' => true,
+						'child_routes' => array(
+							'query'=>array("type"=>"query")
+						)
                     ),
                 ),
             ),
@@ -71,6 +76,9 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
+		'aliases' => array(
+			
+		)
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
